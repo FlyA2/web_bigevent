@@ -60,11 +60,12 @@ $(function () {
             data: $(this).serialize(),
             success: function (res) {
                 console.log(res.status);  // 怎么老是 1
+
                 if (res.status !== 0) {
                     return layer.msg('登录失败！')
                 }
                 layer.msg('登录成功！')
-                // console.log(res.token);
+                console.log(res.token);
                 // 将登陆成功得到的 token 字符串，保存到localStorage 中
                 localStorage.setItem('token', res.token)
                 // 跳转到后台主页
